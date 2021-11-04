@@ -11,8 +11,7 @@ from stubs_traffic_light import TrafficLight
 # This test covers all the senarios when the traffic light turn green
 # According to the question 1, this pair of traffic light are partly exclusive
 # The status can be RED-RED, RED-GREEN, GREEN-RED 
-# The test cover 3 senarios.
-# when the initial status is main street traffic light and side street traffic light are both red.
+# The test cover 2 senarios.
 # when main street traffic light is green side street traffic light is red.
 # when side traffic light is green main street traffic light is red.
 
@@ -25,17 +24,11 @@ def test_traffic_light_turn_green():
     main_street_traffic_light.pair(side_street_traffic_light)
     side_street_traffic_light.pair(main_street_traffic_light)
     
-    #check if side street and main street traffic light are both red 
-    assert side_street_traffic_light =='RED', "The inital color of both traffic lights are red "
-    assert main_street_traffic_light =='RED', "The inital color of both traffic lights are red "
     #change the main street traffic light to green
     main_street_traffic_light.color='GREEN'
-    side_street_traffic_light.is_wait= False
     #check if side street traffic light is red 
     assert side_street_traffic_light =='RED', "When main street traffic light is green, side street traffic light should be red"
     #change the side street traffic light to green
-    side_street_traffic_light.is_wait= True
-    side_street_traffic_light.duration= 90
     side_street_traffic_light.color='GREEN'
     #check if main street traffic light is red 
     assert main_street_traffic_light.color=='RED' , "When side street traffic light is green, main street traffic light should be red"
