@@ -27,7 +27,7 @@ def test_traffic_light_turn_green():
     #change the main street traffic light to green
     main_street_traffic_light.color='GREEN'
     #check if side street traffic light is red 
-    assert side_street_traffic_light =='RED', "When main street traffic light is green, side street traffic light should be red"
+    assert side_street_traffic_light.color =='RED', "When main street traffic light is green, side street traffic light should be red"
     #change the side street traffic light to green
     side_street_traffic_light.color='GREEN'
     #check if main street traffic light is red 
